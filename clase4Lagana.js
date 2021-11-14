@@ -1,4 +1,4 @@
-/*const login = () => {
+const login = () => {
         let user = document.getElementById("user").value;
         let password= document.getElementById("password").value;
 
@@ -8,12 +8,12 @@
                 alert ("Wrong user or password.")
         }
 }
-*/
+
 
 
 // EJERCICIO COMPLEMENTARIO. 
 
-
+ 
 
 /*
 const  subscriptionOne = () => {
