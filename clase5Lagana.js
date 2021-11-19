@@ -79,25 +79,7 @@ function registroUsuarios (datos) {
 
 
 // DESAFÍO NRO 5 . INCORPORAR OBJETOS.
-const terrorMovies = () => {
-        function Terror(datos){
-                this.nombre = datos.nombre;
-                this.duracion = datos.duracion;
-                this.genero = datos.genero;
-                this.year = datos.year;
-        }
-        
-        const terror1  = new Terror ({nombre: "The Purge", duracion: "1.45HS", genero: "Terror", year: "2017"});
-        const terror2  = new Terror ({nombre: "Host", duracion: "1.53HS", genero: "Terror", year: "2020"});
-        const terror3  = new Terror ({nombre: "Escape Room 2", duracion: "1.20HS", genero: "Terror", year: "2021"});
-        const terror4 = new Terror ({nombre: "Don't Breathe 2", duracion: "1.30HS", genero: "Terror", year: "2021"});
-        
-        
-        console.log (terror1);
-        console.log (terror2);
-        console.log (terror3);
-        console.log (terror4);
-}
+
         
         const suspensoMovies = () => {
                 function Suspenso(datos){
@@ -127,27 +109,62 @@ const terrorMovies = () => {
                         this.duracion = datos.duracion;
                         this.genero = datos.genero;
                         this.year = datos.year;
+		
                 }
+
+		
                 
                 const comedia1  = new Comedia ({nombre: "Jungle Cruise", duracion: "1.45HS", genero: "Comedia", year: "2017"});
                 const comedia2  = new Comedia ({nombre: "SPACE JAM", duracion: "1.53HS", genero: "Comedia", year: "2020"});
                 const comedia3  = new Comedia ({nombre: "PINEAPPLE EXPRESS", duracion: "1.20HS", genero: "Comedia", year: "2021"});
                 const comedia4 = new Comedia ({nombre: "BAD BOYS FOR LIFE", duracion: "1.30HS", genero: "Comedia", year: "2021"});
-                
-                
-                console.log (comedia1);
-                console.log (comedia2);
-                console.log (comedia3);
-                console.log (comedia4);
-                
-                
 }
         
-const btnTerror = document.querySelector(`.btnTerror`);
-btnTerror.addEventListener("click", terrorMovies);
+
 
 const btnSuspenso = document.querySelector(`.btnSuspenso`);
 btnSuspenso.addEventListener("click", suspensoMovies);
 
 const btnComedia = document.querySelector(`.btnComedia`);
 btnComedia.addEventListener("click", comediaMovies);
+
+
+
+
+
+
+
+
+
+
+class TerrorMovies {
+	constructor(nombre, duracion, genero, año) {
+		this.nombre = nombre;
+		this.duracion = duracion;
+		this.genero = genero;
+		this.año = año;
+	}
+
+	pelisTerror() {
+		console.log(`Las películas de terror disponibles son: ${this.nombre},${this.duracion},${this.genero},${this.año}`)
+	}
+
+}
+
+const terrorMovies1  = new TerrorMovies ("The Purge ","1.45HS ","Terror ","2017 ");
+const terrorMovies2  = new TerrorMovies ("Host ", "1.53HS ", "Terror ", "2020 ");
+const terrorMovies3  = new TerrorMovies ("Escape Room 2 ", "1.20HS ", "Terror ", "2021 ");
+const terrorMovies4 = new TerrorMovies ("Don't Breathe 2 ", "1.30HS ", "Terror ","2021 ");
+        
+
+
+let mostrarTerror = ()=> {
+	terrorMovies1.pelisTerror();
+	terrorMovies2.pelisTerror();
+	terrorMovies3.pelisTerror();
+	terrorMovies4.pelisTerror();
+}
+
+
+const btnTerror = document.querySelector(`.btnTerror`);
+btnTerror.addEventListener("click", mostrarTerror);
